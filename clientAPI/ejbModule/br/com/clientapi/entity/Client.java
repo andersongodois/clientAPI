@@ -1,4 +1,4 @@
-package br.com.clientapi.persistence.entity;
+package br.com.clientapi.entity;
 
 import java.io.Serializable;
 
@@ -7,12 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TB_CLIENT")
-//@PrimaryKeyJoinColumn(name="CLIENT_ID")
+@Table(name="STORE_CLIENT")
 public class Client implements Serializable {
 
 	/**
@@ -22,13 +20,13 @@ public class Client implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="CLIENT_ID")
+	@Column(name="ID_CLIENT")
 	private Integer id;
 	
-	@Column(name="CLIENT_NAME")
+	@Column(name="NM_CLIENT")
 	private String name;
-	//...
 	
+	//...
 
 	public Integer getId() {
 		return id;
