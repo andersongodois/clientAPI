@@ -17,7 +17,7 @@ import br.com.clientapi.infra.DAO;
 @Remote(ClientDaoRemote.class)
 public class ClientDao implements ClientDaoRemote {
 
-	@PersistenceContext(unitName = "store-dao")
+	@PersistenceContext(unitName = "storeDao")
 	private EntityManager em;
 	private DAO<Client> dao;
 
@@ -45,9 +45,14 @@ public class ClientDao implements ClientDaoRemote {
 	@Override
 	public List<Client> searchClient(Client client) throws Throwable {
 		Map<Object,Object> params = new HashMap<Object,Object>();
-		params.put("controlId", client.getId());
-		params.put("clientId", client.getName());
+		params.put("id", client.getId());
+		params.put("name", client.getName());
 		return dao.findWithNamedQuery("searchClient", params);
+	}
+
+	@Override
+	public Client findClientById(int id) throws Throwable {
+		return null;
 	}
 
 }

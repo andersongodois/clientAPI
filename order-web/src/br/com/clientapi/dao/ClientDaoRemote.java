@@ -12,5 +12,7 @@ public interface ClientDaoRemote extends DAOInterface {
 	List<Client> listClient() throws Throwable;
 
 	List<Client> searchClient(Client client) throws Throwable;
+	
+	Client findClientById(int id) throws Throwable;
 
 }

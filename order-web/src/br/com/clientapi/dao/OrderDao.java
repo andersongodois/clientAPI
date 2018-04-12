@@ -17,7 +17,7 @@ import br.com.clientapi.infra.DAO;
 @Remote(OrderDaoRemote.class)
 public class OrderDao implements OrderDaoRemote {
 
-	@PersistenceContext(unitName = "store-dao")
+	@PersistenceContext(unitName = "storeDao")
 	private EntityManager em;
 	private DAO<Order> dao;
 
@@ -47,7 +47,7 @@ public class OrderDao implements OrderDaoRemote {
 		Map<Object,Object> params = new HashMap<Object,Object>();
 		params.put("controlId", order.getControlId());
 		params.put("date", order.getDate());
-		params.put("procuctName", order.getProductName());
+		params.put("productName", order.getProductName());
 		params.put("productValue", order.getProductValue());
 		params.put("productQuantity", order.getProductQuantity());
 		params.put("totalValue", order.getTotalValue());

@@ -24,10 +24,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 	@NamedQuery(name = "searchOrder", query = "SELECT o FROM Order o "
 			+ "WHERE (:controlId is null OR o.controlId = :controlId) "
 			+ "AND (:date is null OR o.date = :date) "
-			+ "AND (:date is null OR o.date = :date) "
-			+ "AND (:date is null OR o.date = :date) "
-			+ "AND (:date is null OR o.date = :date) "
-			+ "AND (:date is null OR o.date = :date) ")	
+			+ "AND (:productName is null OR o.productName = :procuctName) "
+			+ "AND (:productValue is null OR o.productValue = :productValue) "
+			+ "AND (:productQuantity is null OR o.productQuantity = :productQuantity) "
+			+ "AND (:totalValue is null OR o.totalValue = :totalValue) "
+			+ "AND (:clientId is null OR o.client.id = :clientId) ")
 })
 
 @Entity
